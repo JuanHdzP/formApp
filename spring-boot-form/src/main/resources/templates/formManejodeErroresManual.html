@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${titulo}"></title>
+</head>
+<body>
+	<h1 th:text="${titulo}"></h1>
+	<form th:action="@{/formClaseMapeo}" th:object="${usuario}"
+		method="post">
+
+		<div>
+			<label for="username">Nombre de usuario: </label>
+			<div>
+				<input type="text" id="username" th:field="*{username}">
+			</div>
+			<div th:if="${error != null && error.containsKey('username')}"
+				th:text="${error.username}"></div>
+		</div>
+
+
+		<div>
+			<label for="email">Email del usuario: </label>
+			<div>
+				<input type="email" id="email" th:field="*{email}">
+			</div>
+			<div th:if="${error != null && error.containsKey('email')}"
+				th:text="${error.email}"></div>
+		</div>
+
+		<div>
+			<label for="password">Contraseña del usuario: </label>
+			<div>
+				<input type="password" id="password" th:field="*{password}">
+			</div>
+			<div th:if="${error != null && error.containsKey('password')}"
+				th:text="${error.password}"></div>
+		</div>
+
+		<div>
+
+			<div>
+				<input type="submit" value="Enviar">
+			</div>
+		</div>
+	</form>
+
+</body>
+</html>
