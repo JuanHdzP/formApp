@@ -97,7 +97,9 @@ public class FormController {
 		usuario.setValorSecreto("Llave secreta");
 		usuario.setPais(new Pais(2, "MX", "Mexico"));
 		usuario.setRoles(
-				Arrays.asList(new Role(1, "Administrador", "ROLE_ADMIN"), new Role(2, "Usuario", "ROLE_USER")));
+				Arrays.asList(
+						new Role(1, "Administrador", "ROLE_ADMIN"), 
+						new Role(2, "Usuario", "ROLE_USER")));
 		usuario.setTerminos(true);
 		model.addAttribute("titulo", "Formulario Usuario");
 		model.addAttribute("usuario", usuario);
